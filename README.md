@@ -1,205 +1,133 @@
-# 🐚 Shell — Building a Shell from Scratch in C
+# 🐚 Shell — A Command-Line Shell in C
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-C-blue?style=for-the-badge&logo=c&logoColor=white" />
   <img src="https://img.shields.io/badge/Domain-Systems%20Programming-purple?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Compiler-GCC-orange?style=for-the-badge&logo=gnu" />
+  <img src="https://img.shields.io/badge/Platform-Linux-lightgrey?style=for-the-badge&logo=linux" />
 </p>
 
 <p align="center">
-  <b>A lightweight command-line shell implemented from scratch in C.</b>
+  <b>A lightweight command-line interpreter written in C.</b>
   <br/>
-  Exploring how shells read commands, process input, and interact with the operating system.
+  Understanding how shells interact with the operating system.
 </p>
 
 ---
 
-## 📖 Introduction
+## 📖 Overview
 
-A shell is a command-line interpreter that provides an interface between users and the operating system.
+A shell is a command-line interpreter that acts as an interface between users and the operating system.
 
-This project aims to build a simple shell using the C programming language while understanding the fundamental concepts behind command-line interfaces and process management.
+**Shell** is a C programming project focused on understanding the fundamentals of command-line interpreters, command processing, and operating-system interaction.
 
-Rather than relying on an existing shell implementation, this project focuses on learning how the underlying mechanisms work by implementing them step by step.
+The project explores low-level programming concepts through practical implementation using the C language.
 
-## 🎯 Project Objectives
+## ✨ Key Concepts
 
-- Understand how command-line interpreters work internally.
-- Learn how programs interact with the operating system.
-- Explore process creation and execution.
-- Understand input parsing and command handling.
-- Practice memory management in C.
-- Develop practical systems programming skills.
+- 🖥️ Command-line interfaces
+- ⚙️ Process creation and execution
+- 🔍 Command parsing and tokenization
+- 🧠 Memory management
+- 📂 File and directory operations
+- 🔗 Operating-system interaction
+- 🛠️ Error handling
 
-## ✨ Features
-
-The shell is currently under development.
-
-Planned functionality includes:
-
-- [ ] Interactive command-line prompt.
-- [ ] Read and process user input.
-- [ ] Parse commands and arguments.
-- [ ] Execute external programs.
-- [ ] Handle built-in commands.
-- [ ] Implement command history.
-- [ ] Support input and output redirection.
-- [ ] Support pipelines.
-- [ ] Handle background processes.
-- [ ] Improve error handling.
-
-Features will be marked complete as they are implemented and tested.
-
-## 🏗️ How a Shell Works
-
-A basic shell follows a command-processing cycle:
+## 🏗️ Shell Architecture
 
 ```mermaid
 flowchart TD
-    A([Start Shell]) --> B[Display Prompt]
+    A([Shell Starts]) --> B[Display Prompt]
     B --> C[Read User Input]
     C --> D[Parse Command]
-    D --> E{Valid Command?}
-    E -->|No| F[Display Error]
-    F --> B
-    E -->|Yes| G[Execute Command]
-    G --> H[Wait for Process]
-    H --> B
+    D --> E[Process Command]
+    E --> F[Execute Command]
+    F --> G[Return to Prompt]
+    G --> B
 ```
-
-## 🛠️ Technologies Used
-
-| Technology | Purpose |
-|---|---|
-| C | Core programming language |
-| GCC | C compiler |
-| Git | Version control |
-| GitHub | Source code hosting |
-| VS Code | Development environment |
 
 ## 📂 Project Structure
 
 ```text
 Shell/
+│
 ├── .vscode/
 │   ├── c_cpp_properties.json
 │   ├── launch.json
 │   └── settings.json
+│
 ├── shell.c
 ├── .gitignore
 └── README.md
 ```
 
-## ⚙️ Getting Started
+## 🛠️ Tech Stack
+
+| Technology | Usage |
+|---|---|
+| C | Core implementation |
+| GCC | Compilation |
+| Git | Version control |
+| GitHub | Repository hosting |
+| VS Code | Code editor |
+
+## ⚙️ Installation
 
 ### Prerequisites
 
 - GCC compiler
 - Git
-- VS Code (optional)
+- Linux environment
 
-Check your compiler:
-
-```bash
-gcc --version
-```
-
-### Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Suraj-12343423/Shell.git
 ```
 
-### Navigate to the Project
+### 2. Navigate to the project
 
 ```bash
 cd Shell
 ```
 
-### Compile
+### 3. Compile the source code
 
 ```bash
 gcc shell.c -o my_shell
 ```
 
-### Run
-
-On Linux:
+### 4. Run the shell
 
 ```bash
 ./my_shell
 ```
 
-On Windows PowerShell:
+## 🧠 Concepts Behind the Project
 
-```powershell
-.\my_shell.exe
-```
-
-*Note: The build and execution instructions will be finalized after confirming the platform and implementation compatibility.*
-
-## 🧠 Core Concepts I'm Exploring
-
-| Concept | What I'm learning |
+| Concept | Description |
 |---|---|
-| Input handling | Reading commands from the terminal |
-| String processing | Tokenizing command input |
-| Pointers | Working with memory and strings |
-| Dynamic memory | Managing allocated memory |
-| Processes | Creating and managing processes |
-| System calls | Interacting with the operating system |
-| Error handling | Handling invalid commands and failures |
+| Processes | Understanding program execution |
+| System Calls | Communication with the operating system |
+| Pointers | Memory address manipulation |
+| Strings | Command input processing |
+| Dynamic Memory | Runtime memory allocation |
+| Parsing | Breaking input into meaningful components |
 
-## 🗺️ Development Roadmap
-
-- [x] Initialize the repository.
-- [x] Set up the C development environment.
-- [x] Implement the initial shell foundation.
-- [ ] Improve command parsing.
-- [ ] Add built-in commands.
-- [ ] Implement process management.
-- [ ] Add redirection.
-- [ ] Implement pipes.
-- [ ] Add background execution.
-- [ ] Improve testing and documentation.
-
-## 🧪 Testing
-
-Testing will cover:
-
-- Valid commands.
-- Invalid commands.
-- Empty input.
-- Commands with multiple arguments.
-- Memory allocation failures.
-- Process execution errors.
-
-## 📚 Learning Resources
+## 📚 References
 
 - [Write a Shell in C — Stephen Brennan](https://brennan.io/2015/01/16/write-a-shell-in-c/)
-- [GNU C Library Documentation](https://www.gnu.org/software/libc/manual/)
-- [Linux man-pages](https://man7.org/linux/man-pages/)
-- [The Linux Programming Interface](https://man7.org/tlpi/)
-
-## 🤝 Contributions
-
-This is primarily a learning project, and suggestions, bug reports, and constructive feedback are welcome.
-
-If you find an issue, feel free to open a GitHub issue.
+- [GNU C Library](https://www.gnu.org/software/libc/manual/)
+- [Linux Manual Pages](https://man7.org/linux/man-pages/)
 
 ## 👨‍💻 Author
 
 **Sai Suraj**
 
-- GitHub: [@Suraj-12343423](https://github.com/Suraj-12343423)
-
-## 📜 License
-
-This project is currently a learning project. Licensing will be added once the license choice is finalized.
+[![GitHub](https://img.shields.io/badge/GitHub-Suraj--12343423-black?style=for-the-badge&logo=github)](https://github.com/Suraj-12343423)
 
 ---
 
 <p align="center">
-  <b>Learning systems programming, one command at a time. ⚙️</b>
+  <b>Built with C. Inspired by how operating systems work. ⚙️</b>
 </p>
