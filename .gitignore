@@ -1,0 +1,9 @@
+# Compiled executable
+my_shell
+
+# Build directory
+build/
+
+# Object files
+*.o
+
